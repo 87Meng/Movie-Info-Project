@@ -3,6 +3,8 @@ const app = express();
 const port = 8800;
 const mongoose = require("mongoose");
 
+app.set("view engine", "ejs");
+
 let myKey = "975a07d0fdf4f9abd01458d8f1f9f9c5";
 let introUrl = `https://api.themoviedb.org/3/movie/157336?api_key=${myKey}`;
 let videosUrl = `https://api.themoviedb.org/3/movie/157336/videos?api_key=${myKey}`;
@@ -12,7 +14,7 @@ async function videos() {
   try {
     let result = await fetch(videosUrl);
     let data = await result.json();
-    console.log(data);
+    // console.log(data);
   } catch (e) {
     console.log(e);
   }
@@ -24,14 +26,16 @@ async function movieIntro() {
     let result = await fetch(introUrl);
     let data = await result.json();
     console.log(data);
+    return data;
   } catch (e) {
     console.log(e);
   }
 }
-movieIntro();
 
 app.get("/", (req, res) => {
-  res.send("welcome to index");
+  const movieIntroData = movieIntro();
+
+  res.render("index", { movieIntroData });
 });
 
 app.listen(port, () => {
