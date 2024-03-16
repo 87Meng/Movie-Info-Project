@@ -6,10 +6,12 @@ const mongoose = require("mongoose");
 app.set("view engine", "ejs");
 
 let myKey = "975a07d0fdf4f9abd01458d8f1f9f9c5";
-let introUrl = `https://api.themoviedb.org/3/movie/157336?api_key=${myKey}`;
+
+let introUrl = `https://api.themoviedb.org/3/movie/157336?api_key=${myKey}&language=zh-TW`;
 let videosUrl = `https://api.themoviedb.org/3/movie/157336/videos?api_key=${myKey}`;
 let languageUrl = "https://api.themoviedb.org/3/tv/1399?language=zh-TW";
 
+// 預告片API
 async function videos() {
   try {
     let result = await fetch(videosUrl);
@@ -21,6 +23,7 @@ async function videos() {
 }
 videos();
 
+// 電影簡介API
 async function movieIntro() {
   try {
     let result = await fetch(introUrl);
@@ -32,8 +35,8 @@ async function movieIntro() {
   }
 }
 
-app.get("/", (req, res) => {
-  const movieIntroData = movieIntro();
+app.get("/", async (req, res) => {
+  const movieIntroData = await movieIntro();
 
   res.render("index", { movieIntroData });
 });
