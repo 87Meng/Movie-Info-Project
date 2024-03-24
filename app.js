@@ -23,7 +23,7 @@ async function videos() {
 }
 videos();
 
-// 電影簡介API
+// 電影簡介API ok
 async function movieIntro() {
   try {
     let result = await fetch(introUrl);
@@ -35,10 +35,8 @@ async function movieIntro() {
   }
 }
 
-app.get("/", async (req, res) => {
-  const movieIntroData = await movieIntro();
-
-  res.render("index", { movieIntroData });
+app.get("/", (req, res) => {
+  res.render("index");
 });
 
 app.listen(port, () => {
