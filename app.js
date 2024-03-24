@@ -23,7 +23,7 @@ async function videos() {
 }
 videos();
 
-// 電影簡介API ok
+// 電影簡介API
 async function movieIntro() {
   try {
     let result = await fetch(introUrl);
@@ -39,6 +39,15 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/moiveIntro/:movie_id", async (req, res) => {
+  let { movie_id } = req.params;
+  try {
+    let movieIntroData = await movieIntro({ _id: movie_id });
+    res.render("index", { movieIntroData });
+  } catch (e) {
+    return res.status(500).send(e);
+  }
+});
 app.listen(port, () => {
   console.log("server is listening on port 8800");
 });
