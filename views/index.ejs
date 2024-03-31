@@ -108,10 +108,10 @@
     <div class="swiper">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
-        <%releasedMovieData.forEach(mov => { %>
-        <div class="swiper-slide">
-          <img src=https://image.tmdb.org/t/p/w500<%=mov.poster_path %> alt=""
-          />
+        <%releasedMovieData.forEach((mov,index) => { %>
+        <div class="swiper-slide" key="index">
+          <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
+          alt="" />
         </div>
         <%}); %>
       </div>
@@ -125,11 +125,6 @@
       <!-- If we need scrollbar -->
       <div class="swiper-scrollbar"></div>
     </div>
-
-    <!-- 試串電影名字 -->
-    <!-- <%releasedMovieData.forEach(mov => { %>
-    <p><%=mov.title%></p>
-    <%}); %> -->
 
     <script src="/index.js" type="module"></script>
 

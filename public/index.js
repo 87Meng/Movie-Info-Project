@@ -4,6 +4,7 @@ const swiper = new Swiper(".swiper", {
   // Optional parameters
   // direction: "vertical",
   loop: true,
+  speed: 200,
 
   // If we need pagination
   pagination: {
@@ -21,7 +22,9 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
 
-  autoplay: {
-    // delay: 2000,
-  },
+  // autoplay: {
+  //   delay: 1000,
+  // },
+
+  // effect: "cards",
 });

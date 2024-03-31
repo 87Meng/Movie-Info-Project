@@ -40,7 +40,6 @@ async function movieIntro(url) {
 app.get("/", async (req, res) => {
   try {
     let releasedMovie = await movieIntro(releasedMovieUrl);
-    console.log(releasedMovie.results);
     res.render("index", { releasedMovieData: releasedMovie.results });
   } catch (e) {
     return res.status(500).send(e);
