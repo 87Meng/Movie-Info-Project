@@ -30,7 +30,6 @@ async function movieIntro(url) {
   try {
     let result = await fetch(url);
     let data = await result.json();
-    console.log(data);
     return data;
   } catch (e) {
     console.log(e);
