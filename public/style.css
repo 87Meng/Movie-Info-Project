@@ -9,6 +9,9 @@ div.swiper {
   height: 90vh;
   position: relative;
 }
+div.swiperList {
+  overflow: hidden;
+}
 
 div.swiper-slide {
   text-align: center;

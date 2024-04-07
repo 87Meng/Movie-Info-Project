@@ -109,8 +109,8 @@
     <div class="swiper">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
-        <%releasedMovieData.forEach((mov,index) => { %>
-        <div class="swiper-slide" key="index">
+        <%releasedMovieData.forEach((mov) => { %>
+        <div class="swiper-slide">
           <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
           alt="" />
         </div>
@@ -119,41 +119,26 @@
 
       <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
     </div>
 
     <div style="height: 20vh"><button class="stop">暫停自動撥放</button></div>
 
-    <div>
-      <h2>熱映中</h2>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            Slide 1 <%releasedMovieData.forEach((mov,index) => { %>
-            <div class="swiper-slide" key="index">
-              <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
-              alt="" />
-            </div>
-            <%}); %>
-          </div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">Slide 6</div>
-          <div class="swiper-slide">Slide 7</div>
-          <div class="swiper-slide">Slide 8</div>
-          <div class="swiper-slide">Slide 9</div>
+    <!-- 新 -->
+    <h2>即將上映</h2>
+    <div class="swiperList">
+      <div class="swiper-wrapper">
+        <%upcomingMovieData.forEach((mov,index) => { %>
+        <div class="swiper-slide" key="index">
+          <img src=https://image.tmdb.org/t/p/w500<%=mov.poster_path %> alt=""
+          />
         </div>
-        <div class="swiper-pagination"></div>
+        <%}); %>
       </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
+
+    <!-- 新 -->
 
     <script src="/index.js" type="module"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
