@@ -10,7 +10,7 @@ let myKey = "975a07d0fdf4f9abd01458d8f1f9f9c5";
 
 let videosUrl = `https://api.themoviedb.org/3/movie/157739?/videos?api_key=${myKey}`;
 let languageUrl = "https://api.themoviedb.org/3/tv/1399?language=zh-TW";
-const releasedMovieUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${myKey}&language=zh-TW&page=1`;
+const nowPlayingMovieUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${myKey}&language=zh-TW&page=1`;
 
 // 預告片API
 async function videos() {
@@ -38,8 +38,8 @@ async function movieIntro(url) {
 
 app.get("/", async (req, res) => {
   try {
-    let releasedMovie = await movieIntro(releasedMovieUrl);
-    res.render("index", { releasedMovieData: releasedMovie.results });
+    let nowPlayingMovie = await movieIntro(nowPlayingMovieUrl);
+    res.render("index", { nowPlayingMovieData: nowPlayingMovie.results });
   } catch (e) {
     return res.status(500).send(e);
   }

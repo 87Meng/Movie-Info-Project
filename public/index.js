@@ -17,18 +17,6 @@ const swiper = new Swiper(".swiper", {
     // dynamicMainBullets: 3,
   },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    // draggable: true,
-  },
-
   a11y: {
     prevSlideMessage: "Previous slide",
     nextSlideMessage: "Next slide",
@@ -45,6 +33,39 @@ const swiper = new Swiper(".swiper", {
     rotate: 60,
     slideShadows: false,
   },
+});
+
+const swiper2 = new Swiper(".swiperList", {
+  // Optional parameters
+  // direction: "vertical",
+  loop: true,
+  speed: 1000,
+  slidesPerView: 5,
+  spaceBetween: 10,
+  // initialSlide: 1,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  a11y: {
+    prevSlideMessage: "Previous slide",
+    nextSlideMessage: "Next slide",
+  },
+
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false, //false使用者滑動後會恢復自動播放
+    pauseOnMouseEnter: true, //滑鼠進入自動播放暫停
+  },
+
+  // effect: "coverflow",
+  // coverflowEffect: {
+  //   rotate: 60,
+  //   slideShadows: false,
+  // },
 });
 
 const nav = document.querySelector(".navbar");
