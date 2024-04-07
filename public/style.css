@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "myFont";
+  src: url(./TaipeiSansTCBeta-Bold.ttf);
+}
+
+* {
+  font-family: "myFont";
+}
+
 .navOntop {
   position: fixed;
   width: 100%;
@@ -36,6 +45,7 @@ div.swiper-slide img {
   --swiper-navigation-sides-offset: 24px;
   opacity: 0.7;
   font-weight: 900;
+  z-index: 10;
 }
 
 .swiper-pagination {
@@ -55,7 +65,7 @@ div.swiper-slide img {
   --swiper-scrollbar-size: 4px;
 }
 
-div.hot {
-  font-size: 50px;
-  background-color: black;
+div.nowPlaying {
+  padding: 20px;
+  font-size: 100px;
 }
