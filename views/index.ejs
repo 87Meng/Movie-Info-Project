@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">標籤1</a>
+              <a class="nav-link" aria-current="page" href="#">標籤1</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">標籤2</a>
@@ -110,10 +110,12 @@
 
     <!-- Swiper輪播 -->
     <div class="swiper">
+      <div class="filter"></div>
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <%nowPlayingMovieData.forEach((mov,index) => { %>
         <div class="swiper-slide" key="index">
+          <p><%=mov.title%></p>
           <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
           alt="" />
         </div>
@@ -124,14 +126,16 @@
       <div class="swiper-pagination"></div>
     </div>
 
-    <div style="height: 20vh"><button class="stop">暫停自動撥放</button></div>
+    <div style="height: 20vh" class="stop">
+      <button class="stop">暫停自動撥放</button>
+    </div>
 
     <div class="nowPlaying">
       <h2>熱映中</h2>
       <div class="swiperList">
         <div class="swiper-wrapper">
           <%nowPlayingMovieData.forEach((mov,index) => { %>
-          <div class="swiper-slide">
+          <div class="swiper-slide movieItem">
             <img src=https://image.tmdb.org/t/p/w1280<%=mov.poster_path %>
             alt="" />
           </div>
@@ -144,15 +148,17 @@
       <div class="swiper-button-prev"></div>
     </div>
 
-    <h2>即將上映</h2>
-    <div class="swiperList">
-      <div class="swiper-wrapper">
-        <%upcomingMovieData.forEach((mov,index) => { %>
-        <div class="swiper-slide" key="index">
-          <img src=https://image.tmdb.org/t/p/w500<%=mov.poster_path %> alt=""
-          />
+    <div class="upcoming">
+      <h2>即將上映</h2>
+      <div class="swiperList">
+        <div class="swiper-wrapper">
+          <%upcomingMovieData.forEach((mov,index) => { %>
+          <div class="swiper-slide movieItem" key="index">
+            <img src=https://image.tmdb.org/t/p/w780<%=mov.poster_path %> alt=""
+            />
+          </div>
+          <%}); %>
         </div>
-        <%}); %>
       </div>
     </div>
 
