@@ -8,29 +8,28 @@ app.use(express.static("public"));
 
 let myKey = "975a07d0fdf4f9abd01458d8f1f9f9c5";
 
-let videosUrl = `https://api.themoviedb.org/3/movie/157739?/videos?api_key=${myKey}`;
+let videosUrl = `https://api.themoviedb.org/3/movie/movie_id/videos?api_key=${myKey}&language=zh-TW`;
 let languageUrl = "https://api.themoviedb.org/3/tv/1399?language=zh-TW";
 const upcomingMovieUrl = `https://api.themoviedb.org/3/movie/upcoming?language=zh-TW&page=1&region=TW&api_key=${myKey}`;
 const nowPlayingMovieUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${myKey}&language=zh-TW&page=1`;
 
 // 預告片API
-async function videos() {
+async function videos(url) {
   try {
-    let result = await fetch(videosUrl);
+    let result = await fetch(url);
     let data = await result.json();
-    // console.log(data);
+    console.log(data);
   } catch (e) {
     console.log(e);
   }
 }
-videos();
 
 // 電影簡介API
 async function movieIntro(url) {
   try {
     let result = await fetch(url);
     let data = await result.json();
-    // console.log(data);
+    console.log(data);
     return data;
   } catch (e) {
     console.log(e);

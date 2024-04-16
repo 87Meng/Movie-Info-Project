@@ -12,9 +12,9 @@
   position: fixed;
   top: 5px;
   left: 5px;
-  height: 90vh;
-  width: 50vw;
-  background-color: rgba(0, 0, 0, 0.3);
+  height: 120%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .navOntop {
@@ -35,7 +35,7 @@ div.swiper {
     border: 3px solid green;
     color: white;
     position: absolute;
-    left: 20px;
+    left: 30px;
     top: 35rem;
     font-size: 1.5rem;
   }
@@ -97,8 +97,24 @@ div.nowPlaying,
 div.upcoming,
 .swiper,
 .stop {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.93);
 }
 
-.movieItem {
+div.intro {
+  position: absolute;
+  top: 0; /* 距離父元素頂部的距離 */
+  left: 50px; /* 距離父元素左側的距離 */
+}
+
+div.animation {
+  animation: showIntro 2s ease;
+}
+
+@keyframes showIntro {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }

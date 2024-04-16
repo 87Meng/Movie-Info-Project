@@ -110,10 +110,10 @@
 
     <!-- Swiper輪播 -->
     <div class="swiper">
-      <div class="filter"></div>
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <%nowPlayingMovieData.forEach((mov,index) => { %>
+        <div class="filter"></div>
         <div class="swiper-slide" key="index">
           <p><%=mov.title%></p>
           <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
@@ -126,16 +126,17 @@
       <div class="swiper-pagination"></div>
     </div>
 
-    <div style="height: 20vh" class="stop">
-      <button class="stop">暫停自動撥放</button>
-    </div>
-
     <div class="nowPlaying">
       <h2>熱映中</h2>
       <div class="swiperList">
         <div class="swiper-wrapper">
           <%nowPlayingMovieData.forEach((mov,index) => { %>
           <div class="swiper-slide movieItem">
+            <div class="intro" style="display: none">
+              <img src=https://image.tmdb.org/t/p/w300<%=mov.backdrop_path %>
+              alt="" />
+              <div><%=mov.title%><br />上映日期：<%=mov.release_date%></div>
+            </div>
             <img src=https://image.tmdb.org/t/p/w1280<%=mov.poster_path %>
             alt="" />
           </div>
@@ -153,6 +154,7 @@
       <div class="swiperList">
         <div class="swiper-wrapper">
           <%upcomingMovieData.forEach((mov,index) => { %>
+          <div class="test" style="display: none">test</div>
           <div class="swiper-slide movieItem" key="index">
             <img src=https://image.tmdb.org/t/p/w780<%=mov.poster_path %> alt=""
             />

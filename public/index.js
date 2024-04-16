@@ -57,6 +57,22 @@ const swiperUpcpmingMovie = new Swiper(".swiperList", {
   // effect: "coverflow",
 });
 
+const images = document.querySelectorAll(".movieItem img");
+const intro = document.querySelectorAll(".intro");
+images.forEach((img, index) => {
+  img.addEventListener("mouseover", (e) => {
+    intro[index].style.display = "block";
+    intro[index].classList.add("animation");
+    img.style.transform = "scale(1.2)";
+    console.log(e);
+  });
+  img.addEventListener("mouseout", (e) => {
+    intro[index].style.display = "none";
+    img.style.transform = "scale(1)";
+    console.log(e);
+  });
+});
+
 const nav = document.querySelector(".navbar");
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
@@ -65,9 +81,4 @@ window.addEventListener("scroll", () => {
       nav.classList.add("bg-secondary-subtle")
     : nav.classList.add("navOntop") &
       nav.classList.remove("bg-secondary-subtle");
-});
-//測試Funciton
-const stopBtn = document.querySelector(".stop");
-stopBtn.addEventListener("click", () => {
-  swiper.autoplay.stop();
 });
