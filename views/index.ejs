@@ -137,15 +137,12 @@
               alt="" />
               <p><%=mov.title%><br />上映日期：<%=mov.release_date%></p>
             </div>
-
             <img
-            class="nowPlayingImg"src=https://image.tmdb.org/t/p/w1280<%=mov.poster_path
+            class="movieListImg"src=https://image.tmdb.org/t/p/w1280<%=mov.poster_path
             %> alt="" />
           </div>
           <%}); %>
         </div>
-        <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
       </div>
     </div>
 
@@ -156,13 +153,17 @@
           <%upcomingMovieData.forEach((mov,index) => { %>
           <div class="test" style="display: none">test</div>
           <div class="swiper-slide movieItem" key="index">
-            <img src=https://image.tmdb.org/t/p/w780<%=mov.poster_path %> alt=""
-            />
+            <div class="intro" style="display: none">
+              <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
+              alt="" />
+              <p><%=mov.title%><br />上映日期：<%=mov.release_date%></p>
+            </div>
+
+            <img class="movieListImg"
+            src=https://image.tmdb.org/t/p/w780<%=mov.poster_path %> alt="" />
           </div>
           <%}); %>
         </div>
-        <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
       </div>
     </div>
 

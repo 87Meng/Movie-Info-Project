@@ -115,18 +115,19 @@ div.intro {
   z-index: 5;
   position: absolute;
   background-color: rgb(61, 54, 54);
+  top: 5rem;
   p {
     font-size: 1rem;
   }
 }
 
 div.animation {
-  animation: showIntro 2s ease forwards;
+  animation: showIntro 1s ease forwards;
 }
 
 @keyframes showIntro {
   from {
-    transform: scale(0.5);
+    transform: scale(0.3);
   }
   to {
     transform: scale(2);

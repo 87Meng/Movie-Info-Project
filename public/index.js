@@ -57,27 +57,28 @@ const swiperUpcpmingMovie = new Swiper(".swiperList", {
   // effect: "coverflow",
 });
 
-const images = document.querySelectorAll(".nowPlayingImg");
+const images = document.querySelectorAll(".movieListImg");
 const intro = document.querySelectorAll(".intro");
 let timer;
 
 images.forEach((img, index) => {
-  img.addEventListener("mouseover", () => {
+  img.addEventListener("mouseenter", () => {
     timer = setTimeout(() => {
       intro[index].style.display = "block";
       intro[index].classList.add("animation");
+      img.style.display = "none";
     }, 600);
   });
 
-  img.addEventListener("mouseout", () => {
+  img.addEventListener("mouseleave", () => {
     clearTimeout(timer);
   });
 });
 
-intro.forEach((intro) => {
-  intro.addEventListener("mouseout", () => {
+intro.forEach((intro, index) => {
+  intro.addEventListener("mouseleave", () => {
     intro.style.display = "none";
-    // intro.classList.remove("animation");
+    images[index].style.display = "block";
   });
 });
 
