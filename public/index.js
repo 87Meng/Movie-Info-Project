@@ -58,23 +58,26 @@ const swiperUpcpmingMovie = new Swiper(".swiperList", {
 });
 
 const images = document.querySelectorAll(".nowPlayingImg");
-console.log(images);
 const intro = document.querySelectorAll(".intro");
+let timer;
 
 images.forEach((img, index) => {
-  img.addEventListener("mouseover", (e) => {
-    setTimeout(() => {
+  img.addEventListener("mouseover", () => {
+    timer = setTimeout(() => {
       intro[index].style.display = "block";
       intro[index].classList.add("animation");
-    }, 1000); // 延遲 1000 毫秒（即 1 秒）執行行動代碼
+    }, 600);
+  });
 
-    console.log(e);
+  img.addEventListener("mouseout", () => {
+    clearTimeout(timer);
   });
 });
 
 intro.forEach((intro) => {
-  intro.addEventListener("mouseout", (e) => {
+  intro.addEventListener("mouseout", () => {
     intro.style.display = "none";
+    // intro.classList.remove("animation");
   });
 });
 
