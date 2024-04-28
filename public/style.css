@@ -10,11 +10,14 @@
 .filter {
   z-index: 10;
   position: fixed;
-  top: 5px;
-  left: 5px;
-  height: 120%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
+  height: 180%;
+  width: 70%;
+  left: 0;
+  background: linear-gradient(
+    77deg,
+    rgba(0, 0, 0, 0.8),
+    transparent 85%
+  ); /* 漸層 */
 }
 
 .navOntop {
@@ -30,18 +33,17 @@ div.swiper {
   width: 100%;
   height: 90vh;
   position: relative;
-  z-index: 15;
+
+  /* z-index: 10; */
   p {
-    border: 3px solid green;
-    color: white;
+    /* border: 3px solid green; */
+    color: rgb(255, 255, 255);
     position: absolute;
-    left: 30px;
-    top: 35rem;
+    left: 5%;
+    top: 75%;
     font-size: 1.5rem;
+    z-index: 18;
   }
-}
-div.swiperList {
-  overflow: hidden;
 }
 
 div.swiper-slide {
@@ -65,18 +67,19 @@ div.swiper-slide img {
   --swiper-navigation-size: 40px;
   --swiper-navigation-color: white;
   --swiper-navigation-sides-offset: 24px;
+  padding-left: 100em;
   opacity: 0.7;
   font-weight: 900;
-  z-index: 10;
+  z-index: 25;
 }
 
 .swiper-pagination {
   --swiper-pagination-bottom: 15px;
-  --swiper-pagination-color: brown;
+  --swiper-pagination-color: rgba(255, 255, 255, 0.344);
   --swiper-pagination-bullet-opacity: 0.8;
   --swiper-pagination-bullet-size: 10px;
   --swiper-pagination-bullet-inactive-opacity: 0.3;
-  --swiper-pagination-bullet-horizontal-gap: 10px;
+  --swiper-pagination-bullet-horizontal-gap: 5px;
 }
 
 .swiper-scrollbar {
@@ -91,6 +94,10 @@ div.nowPlaying,
 div.upcoming {
   color: white;
   padding: 20px;
+  h2 {
+    padding: 10px;
+  }
+  overflow: hidden;
 }
 
 div.nowPlaying,
@@ -100,14 +107,21 @@ div.upcoming,
   background-color: rgba(0, 0, 0, 0.93);
 }
 
+div.nowPlaying {
+  padding-top: 50px;
+}
+
 div.intro {
+  z-index: 5;
   position: absolute;
-  top: 0; /* 距離父元素頂部的距離 */
-  left: 50px; /* 距離父元素左側的距離 */
+  background-color: rgb(61, 54, 54);
+  p {
+    font-size: 1rem;
+  }
 }
 
 div.animation {
-  animation: showIntro 2s ease;
+  animation: showIntro 2s ease forwards;
 }
 
 @keyframes showIntro {
@@ -115,6 +129,6 @@ div.animation {
     transform: scale(0.5);
   }
   to {
-    transform: scale(1.2);
+    transform: scale(2);
   }
 }

@@ -113,11 +113,11 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <%nowPlayingMovieData.forEach((mov,index) => { %>
-        <div class="filter"></div>
         <div class="swiper-slide" key="index">
           <p><%=mov.title%></p>
           <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
           alt="" />
+          <div class="filter"></div>
         </div>
         <%}); %>
       </div>
@@ -133,20 +133,20 @@
           <%nowPlayingMovieData.forEach((mov,index) => { %>
           <div class="swiper-slide movieItem">
             <div class="intro" style="display: none">
-              <img src=https://image.tmdb.org/t/p/w300<%=mov.backdrop_path %>
+              <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
               alt="" />
-              <div><%=mov.title%><br />上映日期：<%=mov.release_date%></div>
+              <p><%=mov.title%><br />上映日期：<%=mov.release_date%></p>
             </div>
-            <img src=https://image.tmdb.org/t/p/w1280<%=mov.poster_path %>
-            alt="" />
+
+            <img
+            class="nowPlayingImg"src=https://image.tmdb.org/t/p/w1280<%=mov.poster_path
+            %> alt="" />
           </div>
           <%}); %>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
     </div>
 
     <div class="upcoming">
@@ -161,6 +161,8 @@
           </div>
           <%}); %>
         </div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
       </div>
     </div>
 
