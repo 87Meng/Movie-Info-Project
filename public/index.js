@@ -61,26 +61,26 @@ const images = document.querySelectorAll(".movieListImg");
 const intro = document.querySelectorAll(".intro");
 let timer;
 
-images.forEach((img, index) => {
-  img.addEventListener("mouseenter", () => {
-    timer = setTimeout(() => {
-      intro[index].style.display = "block";
-      intro[index].classList.add("animation");
-      img.style.display = "none";
-    }, 600);
-  });
+// images.forEach((img, index) => {
+//   img.addEventListener("mouseenter", () => {
+//     timer = setTimeout(() => {
+//       intro[index].style.display = "block";
+//       img.classList.add("animation");
+//       img.style.display = "none";
+//     }, 600);
+//   });
 
-  img.addEventListener("mouseleave", () => {
-    clearTimeout(timer);
-  });
-});
+//   img.addEventListener("mouseleave", () => {
+//     clearTimeout(timer);
+//   });
+// });
 
-intro.forEach((intro, index) => {
-  intro.addEventListener("mouseleave", () => {
-    intro.style.display = "none";
-    images[index].style.display = "block";
-  });
-});
+// intro.forEach((intro, index) => {
+//   intro.addEventListener("mouseleave", () => {
+//     intro.style.display = "none";
+//     images[index].style.display = "block";
+//   });
+// });
 
 const nav = document.querySelector(".navbar");
 window.addEventListener("scroll", () => {

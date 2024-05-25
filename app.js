@@ -54,11 +54,13 @@ app.get("/moiveIntro/:movie_id", async (req, res) => {
   let introUrl = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${myKey}&language=zh-TW`;
   try {
     let movieIntroData = await movieIntro(introUrl);
-    res.render("index", { movieIntroData });
+    console.log(movieIntroData);
+    res.render("movie-page", { movieIntroData });
   } catch (e) {
     return res.status(500).send(e);
   }
 });
+
 app.listen(port, () => {
   console.log("server is listening on port 8800");
 });

@@ -33,10 +33,7 @@ div.swiper {
   width: 100%;
   height: 90vh;
   position: relative;
-
-  /* z-index: 10; */
   p {
-    /* border: 3px solid green; */
     color: rgb(255, 255, 255);
     position: absolute;
     left: 5%;
@@ -46,13 +43,20 @@ div.swiper {
   }
 }
 
+div.test {
+  outline: 3px solid red;
+  position: relative;
+  z-index: 8;
+  left: 30px;
+}
+
 div.swiper-slide {
   text-align: center;
-  font-size: 18px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  outline: 3px solid green;
 }
 
 div.swiper-slide img {
@@ -94,10 +98,16 @@ div.nowPlaying,
 div.upcoming {
   color: white;
   padding: 20px;
+  overflow: hidden;
   h2 {
     padding: 10px;
   }
-  overflow: hidden;
+}
+
+div.upcoming,
+div.nowPlaying {
+  position: relative;
+  z-index: 2;
 }
 
 div.nowPlaying,
@@ -111,15 +121,19 @@ div.nowPlaying {
   padding-top: 50px;
 }
 
-div.intro {
+/* .intro {
   z-index: 5;
   position: absolute;
   background-color: rgb(61, 54, 54);
-  top: 5rem;
+  top: 3rem;
   p {
+    font-size: 0.75rem;
+    margin: 0;
+  }
+  a {
     font-size: 1rem;
   }
-}
+} */
 
 div.animation {
   animation: showIntro 1s ease forwards;
@@ -127,7 +141,7 @@ div.animation {
 
 @keyframes showIntro {
   from {
-    transform: scale(0.3);
+    transform: scale(0);
   }
   to {
     transform: scale(2);

@@ -24,6 +24,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/img/favicon.ico" />
   </head>
 
   <body>
@@ -116,7 +117,7 @@
         <div class="swiper-slide" key="index">
           <p><%=mov.title%></p>
           <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
-          alt="" />
+          alt="輪播片" />
           <div class="filter"></div>
         </div>
         <%}); %>
@@ -132,16 +133,11 @@
         <div class="swiper-wrapper">
           <%nowPlayingMovieData.forEach((mov,index) => { %>
           <div class="swiper-slide movieItem">
-            <div class="intro" style="display: none">
-              <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
-              alt="" />
-              <p><%=mov.title%><br />上映日期：<%=mov.release_date%></p>
-            </div>
             <img
             class="movieListImg"src=https://image.tmdb.org/t/p/w1280<%=mov.poster_path
             %> alt="" />
           </div>
-          <%}); %>
+          <%});%>
         </div>
       </div>
     </div>
@@ -153,14 +149,8 @@
           <%upcomingMovieData.forEach((mov,index) => { %>
           <div class="test" style="display: none">test</div>
           <div class="swiper-slide movieItem" key="index">
-            <div class="intro" style="display: none">
-              <img src=https://image.tmdb.org/t/p/w1280<%=mov.backdrop_path %>
-              alt="" />
-              <p><%=mov.title%><br />上映日期：<%=mov.release_date%></p>
-            </div>
-
             <img class="movieListImg"
-            src=https://image.tmdb.org/t/p/w780<%=mov.poster_path %> alt="" />
+            src=https://image.tmdb.org/t/p/w1280<%=mov.poster_path %> alt="" />
           </div>
           <%}); %>
         </div>
