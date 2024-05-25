@@ -56,7 +56,6 @@ div.swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: 3px solid green;
 }
 
 div.swiper-slide img {
@@ -121,7 +120,8 @@ div.nowPlaying {
   padding-top: 50px;
 }
 
-/* .intro {
+.intro {
+  display: none;
   z-index: 5;
   position: absolute;
   background-color: rgb(61, 54, 54);
@@ -133,7 +133,7 @@ div.nowPlaying {
   a {
     font-size: 1rem;
   }
-} */
+}
 
 div.animation {
   animation: showIntro 1s ease forwards;
