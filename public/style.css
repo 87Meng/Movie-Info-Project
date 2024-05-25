@@ -51,7 +51,7 @@ div.test {
 }
 
 div.swiper-slide {
-  text-align: center;
+  /* text-align: center; */
   background: #fff;
   display: flex;
   justify-content: center;
@@ -125,6 +125,7 @@ div.nowPlaying {
   z-index: 5;
   position: absolute;
   background-color: rgb(61, 54, 54);
+  border: 3px solid green;
   top: 3rem;
   p {
     font-size: 0.75rem;
@@ -132,6 +133,32 @@ div.nowPlaying {
   }
   a {
     font-size: 1rem;
+  }
+
+  .movie-title {
+    font-size: 100%;
+  }
+  .vote {
+    img {
+      width: 32px;
+      height: 32px;
+    }
+    display: flex;
+    align-items: center;
+  }
+
+  .vote-average {
+    .large-text {
+      font-size: 1.5em;
+    }
+    display: flex;
+  }
+  .vote-count {
+    display: flex;
+    img {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
