@@ -166,6 +166,19 @@ div.animation {
   animation: showIntro 1s ease forwards;
 }
 
+div.genreMovie {
+  display: flex;
+  justify-content: space-around;
+}
+div.genreMovie div {
+  width: 20%;
+  margin: 5px;
+}
+
+div.genreMovie div a img {
+  width: 100%;
+}
+
 @keyframes showIntro {
   from {
     transform: scale(0);

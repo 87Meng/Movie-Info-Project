@@ -29,7 +29,7 @@ async function movieIntro(url) {
   try {
     let result = await fetch(url);
     let data = await result.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (e) {
     console.log(e);
@@ -54,8 +54,19 @@ app.get("/moiveIntro/:movie_id", async (req, res) => {
   let introUrl = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${myKey}&language=zh-TW`;
   try {
     let movieIntroData = await movieIntro(introUrl);
-    console.log(movieIntroData);
-    res.render("movie-page", { movieIntroData });
+    const genres = movieIntroData.genres[0].id;
+
+    let findMovieByGenres = await movieIntro(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${myKey}&with_genres=${genres}`
+    );
+    // console.log(findMovieByGenres);
+    const genresMovieArray = findMovieByGenres.results.slice(0, 5);
+    const fiveBackdrop = genresMovieArray.map((map) => {
+      return { backdrop: map.backdrop_path, id: map.id };
+    });
+    console.log(fiveBackdrop);
+
+    res.render("movie-page", { movieIntroData, fiveBackdrop });
   } catch (e) {
     return res.status(500).send(e);
   }

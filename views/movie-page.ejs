@@ -4,8 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= movieIntroData.title%></title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1><%= movieIntroData.title%></h1>
+    <div class="movie-page">
+      <h1><%= movieIntroData.title%></h1>
+      <h3><%= movieIntroData.overview%></h3>
+      <img src=https://image.tmdb.org/t/p/w1280<%=movieIntroData.backdrop_path
+      %> alt="" />
+      <p>上映日期: <%= movieIntroData.release_date%></p>
+      <p>上映狀態: <%= movieIntroData.status%></p>
+      <hr />
+
+      <div class="genreMovie">
+        <% fiveBackdrop.forEach(data=>{%>
+        <div>
+          <a href="/moiveIntro/<%=data.id%>">
+            <img src="https://image.tmdb.org/t/p/w300<%=data.backdrop%>" alt=""
+          /></a>
+        </div>
+        <% }) %>
+      </div>
+      <hr />
+      <a href="/">返回首頁</a>
+    </div>
   </body>
 </html>
