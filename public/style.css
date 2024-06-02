@@ -6,6 +6,19 @@
 * {
   font-family: "myFont";
 }
+.navbar-brand:hover {
+  color: rgb(241, 246, 96);
+}
+.nav-link:hover {
+  color: rgb(241, 246, 96);
+}
+
+.changeColor {
+  color: black;
+  :hover {
+    color: rgb(86, 93, 92);
+  }
+}
 
 .filter {
   z-index: 10;
@@ -148,8 +161,10 @@ div.nowPlaying {
   }
 
   .vote-average {
+    border: 3px solid yellow;
     .large-text {
-      font-size: 1.5em;
+      font-size: 1.8em;
+      font-weight: bold;
     }
     display: flex;
   }
