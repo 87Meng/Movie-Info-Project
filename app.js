@@ -51,22 +51,17 @@ app.get("/", async (req, res) => {
 
 app.get("/moiveIntro/:movie_id", async (req, res) => {
   let { movie_id } = req.params;
-  let introUrl = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${myKey}&language=zh-TW`;
+  let introUrl = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${myKey}&language=zh-TW&append_to_response=credits,recommendations`;
   try {
     let movieIntroData = await movieIntro(introUrl);
-    const genres = movieIntroData.genres[0].id;
+    const actorsInfo = movieIntroData.credits.cast.slice(0, 4);
+    const recommendMovie = movieIntroData.recommendations.results.slice(0, 5);
 
-    let findMovieByGenres = await movieIntro(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${myKey}&with_genres=${genres}`
-    );
-    // console.log(findMovieByGenres);
-    const genresMovieArray = findMovieByGenres.results.slice(0, 5);
-    const fiveBackdrop = genresMovieArray.map((map) => {
-      return { backdrop: map.backdrop_path, id: map.id };
+    res.render("movie-page", {
+      movieIntroData,
+      actors: actorsInfo,
+      recommend: recommendMovie,
     });
-    console.log(fiveBackdrop);
-
-    res.render("movie-page", { movieIntroData, fiveBackdrop });
   } catch (e) {
     return res.status(500).send(e);
   }

@@ -29,6 +29,10 @@
   }
 }
 
+.dropdown-menu li a {
+  color: black;
+}
+
 div.swiper {
   width: 100%;
   height: 90vh;
@@ -166,6 +170,45 @@ div.animation {
   animation: showIntro 1s ease forwards;
 }
 
+div.moviePage {
+  display: flex;
+  padding: 1rem;
+  background-size: cover;
+  background-position: center;
+}
+div.moviePage h3,
+h4 {
+  margin-top: 1.25rem;
+}
+
+div.imgContainer {
+  flex: 2 1;
+}
+div.infoContainer {
+  margin-left: 1.5rem;
+  flex: 5 1;
+}
+
+div.imgContainer img {
+  width: 100%;
+}
+div.releaseInfo,
+div.icon {
+  display: flex;
+}
+
+div.releaseInfo p {
+  font-size: 1.25rem;
+  padding: 0 0.5rem;
+}
+
+div.icons i {
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+
+/* 分界 */
+
 div.genreMovie {
   display: flex;
   justify-content: space-around;
@@ -177,6 +220,21 @@ div.genreMovie div {
 
 div.genreMovie div a img {
   width: 100%;
+}
+
+div.actors {
+  display: flex;
+  margin-top: 1.25rem;
+}
+div.actorInfo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.actorInfo img {
+  width: 50%;
 }
 
 @keyframes showIntro {
