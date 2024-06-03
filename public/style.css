@@ -13,6 +13,18 @@
   color: rgb(241, 246, 96);
 }
 
+.dropdown-menu-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dropdown-item {
+  :hover {
+    background-color: black;
+    color: rgb(255, 255, 255);
+  }
+}
+
 .changeColor {
   color: black;
   :hover {
