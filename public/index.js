@@ -1,5 +1,15 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 
+document.getElementById("searchBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  const searchBox = document.getElementById("searchBox");
+  if (searchBox.style.display === "none") {
+    searchBox.style.display = "block";
+  } else {
+    searchBox.style.display = "none";
+  }
+});
+
 const swiper = new Swiper(".swiper", {
   // Optional parameters
   loop: true,
@@ -87,7 +97,7 @@ window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
   scrollY !== 0
     ? nav.classList.remove("navOntop") &
-      nav.classList.add("bg-secondary-subtle")
+      nav.classList.add("bg-secondary-subtle", "changeColor")
     : nav.classList.add("navOntop") &
-      nav.classList.remove("bg-secondary-subtle");
+      nav.classList.remove("bg-secondary-subtle", "changeColor");
 });
